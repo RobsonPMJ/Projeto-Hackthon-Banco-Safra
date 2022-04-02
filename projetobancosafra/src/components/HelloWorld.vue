@@ -32,6 +32,37 @@
   </div>
 </template>
 
+
+
+<script>
+$(".sidebar-dropdown > a").click(function() {
+  $(".sidebar-submenu").slideUp(250);
+  if (
+    $(this)
+      .parent()
+      .hasClass("active")
+  ) {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .parent()
+      .removeClass("active");
+  } else {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .next(".sidebar-submenu")
+      .slideDown(250);
+    $(this)
+      .parent()
+      .addClass("active");
+  }
+});
+
+$("#toggle-sidebar").click(function() {
+  $(".page-wrapper").toggleClass("toggled");
+});
+
+</script>
+
 <script>
 export default {
   name: 'HelloWorld',
@@ -40,6 +71,7 @@ export default {
   },
 };
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

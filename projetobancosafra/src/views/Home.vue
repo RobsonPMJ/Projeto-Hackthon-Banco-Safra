@@ -16,7 +16,7 @@ export default {
     HelloWorld,
   },
   created() {
-    this.$store.dispatch("user/saveUser", { name: "running" });
+    this.$store.dispatch("user/saveUser");
   },
 };
 </script>
